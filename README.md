@@ -45,4 +45,4 @@ menting the new_msg signa
 
 
 
-![Figure 1.1: Encryption_scheme.](https://myoctocat.com/assets/images/base-octocat.svg)
+![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
