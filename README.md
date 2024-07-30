@@ -42,3 +42,7 @@ signal has the name of out_flag
 - A signal communicating the beginning of a new message, given that for every
 message the key needs to be reset to its inital value. We achieve this by imple-
 menting the new_msg signa
+
+
+
+![Figure 1.1: Encryption_scheme.](https://myoctocat.com/assets/images/base-octocat.svg)
