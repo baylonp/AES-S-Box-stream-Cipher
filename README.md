@@ -33,6 +33,11 @@ Where:
 can be represented by the formula CB[i] = (K + i) mod 256
 - S( ) is the S-box transformation of AES algorithm, that works over a byte
 
+![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
+
+
+Figure 1.1 shows the encryption scheme.
+
 Moreover, different requirements have been asked; we need to have:
 - An asynchronous active-low reset port
 - An input flag that will rise to 1 as soon as the input is stable and ready to be
@@ -45,4 +50,6 @@ menting the new_msg signa
 
 
 
-![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
+
+
+
