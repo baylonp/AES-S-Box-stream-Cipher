@@ -15,7 +15,7 @@
   - [Expected behaviour](https://github.com/baylonp/AES-S-Box-stream-Cipher#41-expected-behaviour)
   - [Corner Cases](https://github.com/baylonp/AES-S-Box-stream-Cipher#42-corner-cases)
  
-- [Functional verification]()
+- [Functional verification](https://github.com/baylonp/AES-S-Box-stream-Cipher/tree/main#5-functional-verification-testbenches)
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
@@ -204,3 +204,31 @@ different keys and correctly decrypts them.
 The code for the testbench is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/testbench.sv)
 
 The code for the multikey testbench is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/testbench_multikey.sv)
+
+
+## 6 FPGA Implementation Results
+
+Next, the process needs to be technology dependend since the actions performed so far
+do not have any technical costraints. Using Quartus we work out the logic synthesis
+of our module, which takes into consideration the device we are working on, an Intel
+Altera Cyclone V 5CGXFC9D6F27C7, and hence its technology library. This process
+will output a new HDL file called netlist.
+
+The steps performed on Quartus are the following:
+- Instatiate a Top-Level module
+- Add the RTL files: aes_enc_dec_module.sv and sbox.sv
+- Add the time costraints file, finding the the maximum operating frequency to be
+156.81Mhz, see Figure 6.1
+- Assign virtual pins
+- Perform the gate level simulation, running in order: Static Anlysis & Synthesis,
+Fitter(Place and Route), Assembler(Generate programming files), Timing Analy-
+sis (STA) and Netlist writer to conclude
+
+
+The Quartus flow summary, shown in Figure 6.3 gives us a perspective on the re-
+sources used by our project. As we can see the total virtual pins assigned are 28.
+
+
+A key point in the flow summary is the Logic Utilization (in ALMs). This value
+provides us the total amount of logic resources used among FPGA configurable logic
+blocks. This is shown in Figure 6.5
