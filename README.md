@@ -9,6 +9,8 @@
 
 - [High-level model](https://github.com/baylonp/AES-S-Box-stream-Cipher/tree/main#2-high-level-design-aka-golden-model)
 
+- [RTL design](https://github.com/baylonp/AES-S-Box-stream-Cipher#3-rtl-block-diagram-analysis)
+
 
 
 ## 1.1 Encryption scheme design
@@ -99,4 +101,6 @@ Another MUX helps manage the selection process, ensuring that the correct value 
 The key and new message signals initialize the process and the validity signals ensure that only valid data is processed and output.
 
 Figure 3.3 illustrates the RTL block diagram of our module.
+
+![Figure 3.3: RTL.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/RTL-design.png)
 
