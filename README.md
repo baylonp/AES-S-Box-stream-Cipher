@@ -232,3 +232,12 @@ sources used by our project. As we can see the total virtual pins assigned are 2
 A key point in the flow summary is the Logic Utilization (in ALMs). This value
 provides us the total amount of logic resources used among FPGA configurable logic
 blocks. This is shown in Figure 6.5
+
+
+![Figure 6.1 Max frequency](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/frequency.png)
+
+
+![Figure 6.3 Flow Summary](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/flow%20summary.png)
+
+
+![Figure 6.5 ALMs utilization](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/ALM.png )
