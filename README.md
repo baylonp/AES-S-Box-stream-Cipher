@@ -60,3 +60,18 @@ input. If my input to the table is 10101111, the first 4 LSB will decide the row
 
 
 From Figure 1.2 we can see that the returning value is 79
+
+
+
+## 2 High-Level Design (AKA Golden Model)
+
+The Python High Level model that we developed comprises 2 main functions: En-
+crypt() and Decrypt().
+
+The Encrypt function takes a ASCII sctring as input, performs all the operations men-
+tioned above and print out the ciphertext.
+
+This output is fed into the Decrypt() function wich will perform the reverse opera-
+tions and print out the initial ASCII input. To conclude, the LUT version of the Sbox
+has been implemented via hardcoded values in a matrix (list of lists).
+
