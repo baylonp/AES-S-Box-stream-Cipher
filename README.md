@@ -13,7 +13,7 @@
 
 - Interface Specifications and Expected Behavior
   - [Expected behaviour](https://github.com/baylonp/AES-S-Box-stream-Cipher#41-expected-behaviour)
-  - [Corner Cases]
+  - [Corner Cases](https://github.com/baylonp/AES-S-Box-stream-Cipher#42-corner-cases)
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
