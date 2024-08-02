@@ -104,3 +104,6 @@ Figure 3.3 illustrates the RTL block diagram of our module.
 
 ![Figure 3.3: RTL.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/RTL-design.png)
 
+In addition, a fiite state machine could be helpful to understand the varius steps in the simple module we implemented.
+
+![FSM](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/FSM.png)
