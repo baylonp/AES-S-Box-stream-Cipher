@@ -11,7 +11,8 @@
 
 - [RTL design](https://github.com/baylonp/AES-S-Box-stream-Cipher#3-rtl-block-diagram-analysis)
 
-
+- Interface Specifications and Expected Behavior
+  -[Expected behaviour]()
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
@@ -107,3 +108,42 @@ Figure 3.3 illustrates the RTL block diagram of our module.
 In addition, a fiite state machine could be helpful to understand the varius steps in the simple module we implemented.
 
 ![FSM](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/FSM.png)
+
+
+## 4.1 Expected behaviour
+
+
+To power on the system, we must assert rst_n as the initial step of resetting internal
+registers. This reset should be held low for one clock cycle to achieve proper resetting
+of all internal states of the module. When the reset is deasserted (made high), operation
+can begin.
+
+The new_msg signal should be asserted by the user while providing an input_key[7:0]
+decryption/encryption on their input. During this process, the key is loaded into an
+internal index register. For at least one clock cycle, it should stay high before being
+released again. During this time, in_valid must remain low in order to prevent early
+processing of any input data.
+
+For the user to execute the decryption or encryption process, he needs to load the key
+and then provide input data. The in_valid signal should be raised high for every data
+byte and the data entered into in[7:0]. The module will then process this input data byte
+in the next clock cycle. Of course, the in_valid signal must be high for one clock cycle
+while the module performs the necessary calculations.
+
+It produces decrypted or encrypted output via out[7:0] port. After signaling that the
+output is ready and valid, out_flag will remain high. After these steps are completed,
+an external device can capture the output and then wait for the next valid data byte by
+monitoring the out_flag.
+
+Timing wise, synchronizing the in_valid signal with a clock signal requires that all
+input bytes are input separately on different clock cycles where presence of valid data
+is indicated by in_valid signal. In order to enable continuous data processing with each
+
+clock edge, after in_valid has been set up output data will only be available during next
+bit time.
+
+This behaviour is shown in Figure 4.1.
+
+
+
+![Figure 4.1 Expected waveform](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/waveform.png)
