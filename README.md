@@ -4,7 +4,7 @@
 ## Table of content
 
 - Project specification
-  - [Encryption scheme design](https://github.com/baylonp/AES-S-Box-stream-Cipher/edit/main/README.md#11-encryption-scheme-design)
+  - [Encryption scheme design]()
   - [S-Box](https://github.com/baylonp/AES-S-Box-stream-Cipher#12-s-box)
 
 
