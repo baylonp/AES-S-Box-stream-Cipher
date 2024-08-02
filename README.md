@@ -201,4 +201,6 @@ input_text_multikey.txt **test vector** for encryption and from out_text_multike
 cryption. Through this test we prove that our module correctly encrypts plaintexts with
 different keys and correctly decrypts them.
 
-The code is here for the [testbench](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/testbench.sv)
+The code for the testbench is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/testbench.sv)
+
+The code for the multikey testbench is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/testbench_multikey.sv)
