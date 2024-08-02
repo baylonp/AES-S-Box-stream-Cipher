@@ -78,3 +78,25 @@ has been implemented via hardcoded values in a matrix (list of lists).
 
 The code is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/golden_model.py)
 
+
+## 3 RTL block diagram analysis
+The system takes several inputs: an 8-bit data input in[7:0], a clock signal clk, a reset signal rst_n, an input validity signal in_valid, a new message signal new_msg, and an 8-bit key key[7:0].
+
+The purpose of the module is to process the input data using the key, producing an 8-bit output out[7:0] and a flag out_flag indicating the validity of the output.
+
+The most important part is the AES substitution box aes_sbox, which takes an 8-bit input index[7:0] and produces an 8-bit output c. The value of index is determined by the operations described in chapter 1.
+
+The system starts by resetting the index register when the rst_n signal is low. When new_msg is high, the key key[7:0] is loaded into the index register. If new_msg is not active and in_valid is high, the index value is incremented by one.
+The data input in[7:0] is then XORed with the output of the aes_sbox module. The result of this XOR operation is stored in a register, which holds the output value out[7:0].
+
+This register updates on the rising edge of the clock signal, but only if in_valid is high, indicating that the input data is valid. At the same time, the out_flag register is set high,signaling that the output data is valid.
+
+The block diagram also includes multiplexers that control the flow of data within
+the module. One MUX selects between the key and the incremented index value, di-
+recting the appropriate value to the index register based on the control signals.
+
+Another MUX helps manage the selection process, ensuring that the correct value is loaded into the register at the right time.
+The key and new message signals initialize the process and the validity signals ensure that only valid data is processed and output.
+
+Figure 3.3 illustrates the RTL block diagram of our module.
+
