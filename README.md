@@ -56,4 +56,4 @@ input. If my input to the table is 10101111, the first 4 LSB will decide the row
 4 MSB will decide the column. In this example Row = (A0) (16) and Column =
 (0F ) (16) . From Figure 1.2 we can see that the returning value is 79
 
-
+![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
