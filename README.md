@@ -13,6 +13,7 @@
 
 - Interface Specifications and Expected Behavior
   - [Expected behaviour](https://github.com/baylonp/AES-S-Box-stream-Cipher#41-expected-behaviour)
+  - [Corner Cases]
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
@@ -147,3 +148,12 @@ This behaviour is shown in Figure 4.1.
 
 
 ![Figure 4.1 Expected waveform](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/waveform.png)
+
+
+## 4.2 Corner cases
+When the in_valid signal is asserted without first asserting new_msg, the module will
+still process the input data, but it may not use the intended key for encryption or decryption, leading to incorrect outputs. Therefore, it is crucial to follow the correct sequence of signals to ensure proper operation.
+
+When the in_valid signal is not raised to 1 after the signal new_msg goes low data
+is ignored, the module does not recognize that valid input data is available. As a result,
+it ignores the input data on in[7:0]. In addition, since in_valid is low, the index register does not increment and remains at its current value.
