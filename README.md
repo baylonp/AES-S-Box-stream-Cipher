@@ -3,9 +3,9 @@
 
 ## Table of content
 
-- [Project specification](https://github.com/baylonp/AES-S-Box-stream-Cipher/edit/main/README.md#11-encryption-scheme-design)
-  - Encryption scheme design
-  - S-Box
+- Project specification
+  - [Encryption scheme design](https://github.com/baylonp/AES-S-Box-stream-Cipher/edit/main/README.md#11-encryption-scheme-design)
+  - [S-Box](https://github.com/baylonp/AES-S-Box-stream-Cipher#12-s-box)
 
 
 
@@ -54,6 +54,9 @@ We adopted a modified ( simplified ) version of Substitution box, we do not impl
 Our S-Box is a table of values which get choosen based on the LSB and MSB of the
 input. If my input to the table is 10101111, the first 4 LSB will decide the row, the
 4 MSB will decide the column. In this example Row = (A0) (16) and Column =
-(0F ) (16) . From Figure 1.2 we can see that the returning value is 79
+(0F ) (16) . 
 
-![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
+![Figure 1.2: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/s_box_implemented_in_the_project.png)
+
+
+From Figure 1.2 we can see that the returning value is 79
