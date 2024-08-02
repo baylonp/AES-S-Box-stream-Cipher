@@ -39,7 +39,7 @@ Where:
 can be represented by the formula CB[i] = (K + i) mod 256
 - S( ) is the S-box transformation of AES algorithm, that works over a byte
 
-![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/encryption_scheme_stream_cipher.png)
+![Figure 1.1: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/encryption_scheme_stream_cipher.png)
 
 
 Figure 1.1 shows the encryption scheme.
@@ -62,7 +62,7 @@ input. If my input to the table is 10101111, the first 4 LSB will decide the row
 4 MSB will decide the column. In this example Row = (A0) (16) and Column =
 (0F ) (16) . 
 
-![Figure 1.2: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/s_box_implemented_in_the_project.png)
+![Figure 1.2: Encryption_scheme.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/s_box_implemented_in_the_project.png)
 
 
 From Figure 1.2 we can see that the returning value is 79
@@ -106,11 +106,11 @@ The key and new message signals initialize the process and the validity signals 
 
 Figure 3.3 illustrates the RTL block diagram of our module.
 
-![Figure 3.3: RTL.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/RTL-design.png)
+![Figure 3.3: RTL.](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/RTL-design.png)
 
 In addition, a fiite state machine could be helpful to understand the varius steps in the simple module we implemented.
 
-![FSM](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/FSM.png)
+![FSM](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/FSM.png)
 
 
 ## 4.1 Expected behaviour
@@ -149,7 +149,7 @@ This behaviour is shown in Figure 4.1.
 
 
 
-![Figure 4.1 Expected waveform](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/waveform.png)
+![Figure 4.1 Expected waveform](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/images/waveform.png)
 
 
 ## 4.2 Corner cases
