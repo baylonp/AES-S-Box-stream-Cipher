@@ -14,6 +14,8 @@
 - Interface Specifications and Expected Behavior
   - [Expected behaviour](https://github.com/baylonp/AES-S-Box-stream-Cipher#41-expected-behaviour)
   - [Corner Cases](https://github.com/baylonp/AES-S-Box-stream-Cipher#42-corner-cases)
+ 
+- [Functional verification]()
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
@@ -157,3 +159,44 @@ still process the input data, but it may not use the intended key for encryption
 When the in_valid signal is not raised to 1 after the signal new_msg goes low data
 is ignored, the module does not recognize that valid input data is available. As a result,
 it ignores the input data on in[7:0]. In addition, since in_valid is low, the index register does not increment and remains at its current value.
+
+
+## 5 Functional verification (Testbenches)
+The testbench we designed for the AES encryption/decryption thoroughly tests both
+the encryption and decryption capabilities of the module.The test sequence starts with
+defining and initializing various signals that control and provide inputs to the module,
+including the clock, reset, input valid, new message, input data and the key. Outputs
+are also defined to capture the results from the module.
+
+The aes_enc_dec_module, defined as Device Under Test (DUT), is instantiated and
+connected to these signals. The testbench generates a clock signal that oscillates every
+5 time units. Initially, the reset signal is asserted to initialize the module to a known
+state, then after 14.5 time units, it is deasserted to begin the functional mode.
+
+The testbench reads input values and expected output values from external test vec-
+tors, manually loaded into registers.The key loading process is simulated by setting the
+new_msg signal high and providing a specific key value. In our case, the key value is
+initalized to 0xAA.
+
+Once the key is loaded, the testbench enters the encryption testing phase. It loops
+through a series of input data values, providing each one to the module while asserting
+the in_valid signal to indicate valid data.
+
+After giving the module time to process each input, it checks the output against the ex-
+pected result. If the output matches the expected value, a success message is displayed;
+if not, a failure message is shown. This process ensures that the module correctly en-
+crypts the input data according to the provided key.
+
+The opposite happens for the Decrytpion testing phase.
+In order to prove the correctness of our model we encrypted the string hello = (68656c6c6f ) (16) using the key 0xAA and the ciphertext value returned back is c407fdf98b.
+
+This value is then saved in a register called encrypted_outputs and later used for decryption. Its decryption will be compared with the values in the input_text.txt test vector.
+
+We see that this process gives back the original plaintext string hello.
+
+Moreover, we tested the module using different keys for encrypting the same plain-
+text. 
+As we can see, every 5 tests the key changes. The expected values come from the
+input_text_multikey.txt **test vector** for encryption and from out_text_multikey.txt for de-
+cryption. Through this test we prove that our module correctly encrypts plaintexts with
+different keys and correctly decrypts them.
