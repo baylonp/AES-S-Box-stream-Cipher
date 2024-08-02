@@ -7,7 +7,7 @@
   - [Encryption scheme design](https://github.com/baylonp/AES-S-Box-stream-Cipher#11-encryption-scheme-design)
   - [S-Box](https://github.com/baylonp/AES-S-Box-stream-Cipher#12-s-box)
 
-
+- [High-level model](https://github.com/baylonp/AES-S-Box-stream-Cipher/tree/main#2-high-level-design-aka-golden-model)
 
 
 
@@ -68,10 +68,13 @@ From Figure 1.2 we can see that the returning value is 79
 The Python High Level model that we developed comprises 2 main functions: En-
 crypt() and Decrypt().
 
+
 The Encrypt function takes a ASCII sctring as input, performs all the operations men-
 tioned above and print out the ciphertext.
 
 This output is fed into the Decrypt() function wich will perform the reverse opera-
 tions and print out the initial ASCII input. To conclude, the LUT version of the Sbox
 has been implemented via hardcoded values in a matrix (list of lists).
+
+The code is [here](https://github.com/baylonp/AES-S-Box-stream-Cipher/blob/main/golden_model.py)
 
