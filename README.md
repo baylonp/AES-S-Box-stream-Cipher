@@ -17,6 +17,8 @@
  
 - [Functional verification](https://github.com/baylonp/AES-S-Box-stream-Cipher/tree/main#5-functional-verification-testbenches)
 
+- [FPGA Implementation Results](https://github.com/baylonp/AES-S-Box-stream-Cipher/tree/main#6-fpga-implementation-results)
+
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
 cipher which supports both encryption and decryption in system verilog, plus the logic synthesis in Quartus.
