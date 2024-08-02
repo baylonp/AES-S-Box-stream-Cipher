@@ -49,7 +49,11 @@ message the key needs to be reset to its inital value. We achieve this by imple-
 menting the new_msg signa
 
 
-
-
+## 1.2 S-Box
+We adopted a modified ( simplified ) version of Substitution box, we do not implement the DES S-box lookup mechanism.
+Our S-Box is a table of values which get choosen based on the LSB and MSB of the
+input. If my input to the table is 10101111, the first 4 LSB will decide the row, the
+4 MSB will decide the column. In this example Row = (A0) (16) and Column =
+(0F ) (16) . From Figure 1.2 we can see that the returning value is 79
 
 
