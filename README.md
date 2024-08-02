@@ -12,7 +12,7 @@
 - [RTL design](https://github.com/baylonp/AES-S-Box-stream-Cipher#3-rtl-block-diagram-analysis)
 
 - Interface Specifications and Expected Behavior
-  -[Expected behaviour]()
+  - [Expected behaviour](https://github.com/baylonp/AES-S-Box-stream-Cipher#41-expected-behaviour)
 
 ## 1.1 Encryption scheme design
 The project comprises the design and implementation of an **AES S-box based ** stream
